@@ -19,7 +19,7 @@ public class Job {
 
     public Job() {
         this.id = nextId;
-        nextId ++;
+        nextId++;
     }
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
@@ -95,16 +95,16 @@ public class Job {
 
     @Override
     public String toString() {
-        if(name == null && employer == null && location == null && positionType == null && coreCompetency == null){
+        if (name == null && employer == null && location == null && positionType == null && coreCompetency == null) {
             return "OOPS! This job does not seem to exist.";
         }
         return "\n" +
-                "ID: " + id  + "\n" +
-                "Name: " + (name == null ? "Data not available" : name) + "\n" +
-                "Employer: " + (employer.getValue() == null ? "Data not available" : employer) + "\n" +
-                "Location: " + (location.getValue() == null ? "Data not available" : location) + "\n" +
-                "Position Type: " + (positionType.getValue() == null ? "Data not available" : positionType) + "\n" +
-                "Core Competency: " + (coreCompetency.getValue() == null ? "Data not available" : coreCompetency) +
+                "ID: " + id + "\n" +
+                "Name: " + ((name == null || name == "") ? "Data not available" : name) + "\n" +
+                "Employer: " + ((employer.getValue() == null || employer.getValue() == "") ? "Data not available" : employer) + "\n" +
+                "Location: " + ((location.getValue() == null || location.getValue() == "") ? "Data not available" : location) + "\n" +
+                "Position Type: " + ((positionType.getValue() == null || positionType.getValue() == "") ? "Data not available" : positionType) + "\n" +
+                "Core Competency: " + ((coreCompetency.getValue() == null || coreCompetency.getValue() == "") ? "Data not available" : coreCompetency) +
                 "\n";
     }
 }
